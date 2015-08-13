@@ -1,0 +1,19 @@
+{
+  "name": "playable",
+  "version": "0.0.1",
+  "homepage": "https://github.com/i-playable/playable",
+  "authors": [
+    "Kowit C. <kowit@i-playable.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
