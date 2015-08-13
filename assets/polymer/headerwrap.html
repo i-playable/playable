@@ -1,0 +1,32 @@
+<!-- *****************************************************************************************************************
+ HEADERWRAP
+ ***************************************************************************************************************** -->
+<div id="headerwrap">
+    <div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h3>Show your work with this beautiful theme</h3>
+				<h1>Eyecatching Bootstrap 3 Theme.</h1>
+				<h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
+				<h5>More Lorem Ipsum added here too.</h5>				
+			</div>
+			<div class="col-lg-8 col-lg-offset-2 himg">
+				<img src="{% static "img/browser.png" %}" class="img-responsive">
+			</div>
+		</div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /headerwrap -->
+
+<link rel="import"
+      href="bower_components/polymer/polymer.html">
+
+<script>
+  // register a new element called proto-element
+  Polymer({
+    is: "headerwrap",
+    // add a callback to the element's prototype
+    ready: function() {
+      this.textContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  });
+</script>
