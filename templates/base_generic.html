@@ -1,4 +1,4 @@
-{% load static from staticfiles %}<!DOCTYPE html>
+{% load i18n %}{% load static from staticfiles %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,10 +9,19 @@
     <link rel="shortcut icon" href="{% static "ico/favicon.ico" %}">
 
     <title>{% block title %}Playable{% endblock %}</title>
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script src="{% static 'webcomponentsjs/webcomponents-lite.min.js' %}"></script>
+
+
+
+
+
+
+
+
+
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{% static "css/style.css" %}" rel="stylesheet">
@@ -47,22 +56,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">SOLID.</a>
+			<a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+				<img style="max-width:100px; margin-top: -7px;" src="{% static "img/logo.png" %}">
+			</a>
+
+
+
+
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="single-post.html">SINGLE POST</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="single-project.html">SINGLE PROJECT</a></li>
-              </ul>
-            </li>
+            <li class="active"><a href="index.html">{% trans 'HOME' %}</a></li>
+            <li><a href="about.html">{% trans 'ABOUT' %}</a></li>
+            <li><a href="contact.html">{% trans 'CONTACT' %}</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -316,18 +322,18 @@
 	 <div id="cwrap">
 		 <div class="container">
 		 	<div class="row centered">
-			 	<h3>OUR CLIENTS</h3>
+			 	<h3>{% trans 'OUR PARTHNER' %}</h3>
 			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static 'img/clients/client01.png' %}" class="img-responsive">
+			 		<img src="{% static 'img/partners/partner_01.png' %}" class="img-responsive">
 			 	</div>
 			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static 'img/clients/client02.png' %}" class="img-responsive">
+			 		<img src="{% static 'img/partners/partner_02.png' %}" class="img-responsive">
 			 	</div>
 			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static 'img/clients/client03.png' %}" class="img-responsive">
+			 		<img src="{% static 'img/partners/partner_03.png' %}" class="img-responsive">
 			 	</div>
 			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static 'img/clients/client04.png' %}" class="img-responsive">
+			 		<img src="{% static 'img/partners/partner_04.png' %}" class="img-responsive">
 			 	</div>
 		 	</div><! --/row -->
 		 </div><! --/container -->
@@ -339,29 +345,20 @@
 	 <div id="footerwrap">
 	 	<div class="container">
 		 	<div class="row">
-		 		<div class="col-lg-4">
-		 			<h4>About</h4>
+		 		<div class="col-lg-8">
+		 			<h4>{% trans 'About' %} </h4>
 		 			<div class="hline-w"></div>
 		 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 		 		</div>
 		 		<div class="col-lg-4">
-		 			<h4>Social Links</h4>
+		 			<h4>{% trans 'Contact Us' %}</h4>
 		 			<div class="hline-w"></div>
 		 			<p>
-		 				<a href="#"><i class="fa fa-dribbble"></i></a>
-		 				<a href="#"><i class="fa fa-facebook"></i></a>
-		 				<a href="#"><i class="fa fa-twitter"></i></a>
-		 				<a href="#"><i class="fa fa-instagram"></i></a>
-		 				<a href="#"><i class="fa fa-tumblr"></i></a>
-		 			</p>
-		 		</div>
-		 		<div class="col-lg-4">
-		 			<h4>Our Bunker</h4>
-		 			<div class="hline-w"></div>
-		 			<p>
-		 				Some Ave, 987,<br/>
-		 				23890, New York,<br/>
-		 				United States.<br/>
+		 				{% blocktrans %}
+		 				PlayAble Co., Ltd. 
+						142 Soi Praeng Sappasart, Tanao Road, San Chao Pho Suea, Phra Nakhon, Bangkok 10200<br/>
+						Tel. 02-622-2999 fax.02-622-3299<br/>
+						{% endblocktrans %}
 		 			</p>
 		 		</div>
 		 	

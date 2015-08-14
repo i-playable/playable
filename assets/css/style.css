@@ -101,22 +101,22 @@ a:focus {
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: white;
+	color: #F68D39;
 	font-weight: 700;
 	font-size: 12px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-	color: #00b3fe;
+	color: #00A8E5;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #00b3fe;
+	color: #00A8E5;
 	background-color: transparent;
 }
 
 .navbar-default {
-	background-color: #384452;
+	background-color: #FCFCFC;
 	border-color: transparent;
 }
 
@@ -142,8 +142,8 @@ a:focus {
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
   color: #fff;
-  background-color: #00b3fe;
-  border-color: #00b3fe;
+  background-color: #00A8E5;
+  border-color: #00A8E5;
 }
 
 .dmbutton:hover,
@@ -205,7 +205,7 @@ a:focus {
 ################################################################# */
 
 #headerwrap {
-	background-color: #00b3fe;
+	background-color: #00A8E5;
 	min-height: 550px;
 	padding-top: 100px;
 	padding-bottom: 0px;
@@ -233,7 +233,7 @@ a:focus {
 }
 
 #service i {
-	color: #00b3fe;
+	color: #00A8E5;
 	font-size: 60px;
 	padding: 15px;
 }
@@ -281,7 +281,7 @@ a:focus {
 {
 	height:100%;
 	width:100%;
-	background-color:#00b3fe;
+	background-color:#00A8E5;
 	background-color:rgba(0,179,254,.9);
 	text-align:center;
 }
@@ -354,7 +354,7 @@ a:focus {
 }
 
 #footerwrap i:hover {
-	color: #00b3fe
+	color: #00A8E5
 }
 
 /*	################################################################
@@ -363,7 +363,7 @@ a:focus {
 /* General Tweaks */
 
 #blue {
-	background: #00b3fe;
+	background: #00A8E5;
 	margin-top: 60px;
 	margin-bottom: 60px;
 	padding-top: 25px;
@@ -376,7 +376,7 @@ a:focus {
 }
 
 .ctitle {
-	color: #00b3fe;
+	color: #00A8E5;
 	font-weight: 700;
 	margin-bottom: 15px;
 }
@@ -396,7 +396,7 @@ csmall2 {
 }
 
 .badge-theme {
-	background: #00b3fe;
+	background: #00A8E5;
 }
 
 /* Contact Page */
