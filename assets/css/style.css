@@ -86,8 +86,8 @@ a:focus {
 	BOOTSTRAP MODIFICATIONS & TWEAKS
 ################################################################# */
 .navbar {
-	min-height: 70px;
-	padding-top: 10px;
+/*	min-height: 70px;*/
+/*	padding-top: 10px;*/
 	margin-bottom: 0px;
 }
 
@@ -337,6 +337,12 @@ a:focus {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	background: #384452;
+    position: absolute;
+    width: 100%;
+    height: 270px;
+    bottom: 0;
+	
+	
 }
 
 #footerwrap p {
@@ -354,9 +360,13 @@ a:focus {
 }
 
 #footerwrap i:hover {
-	color: #00A8E5
+	color: #00A8E5;
+	
 }
 
+#flatpagewrap{
+	padding-top:50px;
+}
 /*	################################################################
 	PAGE CONFIGURATIONS
 ################################################################# */
