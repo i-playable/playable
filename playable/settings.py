@@ -26,7 +26,7 @@ SECRET_KEY = '+@3unt27yr9jp6%o(rquy!k%(v@q#%cehsvh#k3m#x#-czwsas'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-SITE_ID=1
+SITE_ID = 1
 
 # Application definition
 
@@ -40,6 +40,11 @@ INSTALLED_APPS = (
 
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django.contrib.webdesign',
+
+    'django_markdown',
+
+    'playable',
 
 )
 
@@ -106,12 +111,14 @@ USE_TZ = True
 
 STATIC_URL = '/assets/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
+    os.path.join(BASE_DIR, 'assets/build'),
     os.path.join(BASE_DIR, 'bower_components'),
-    
-    )
+
+)
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+
+MARKDOWN_EDITOR_SKIN = 'simple'

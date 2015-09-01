@@ -1,4 +1,4 @@
-{% load i18n %}{% load static from staticfiles %}<!DOCTYPE html>
+{% load i18n webdesign %}{% load static from staticfiles %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,18 +9,15 @@
     <link rel="shortcut icon" href="{% static "ico/favicon.ico" %}">
 
     <title>{% block title %}Playable{% endblock %}</title>
-    <script src="{% static 'webcomponentsjs/webcomponents-lite.min.js' %}"></script>
-
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="{% static "css/style.css" %}" rel="stylesheet">
-    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static 'css/playable.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="{% static 'js/ie8-responsive-file-warning.js' %}"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,11 +25,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script src="{% static 'js/modernizr.custom.15230.js' %}"></script>
-	
-
-	<link rel="import" href="{% static 'polymer/headerwrap.html' %}">
-
+    <script src="{% static 'js/vendor/modernizr_custom_15230.min.js' %}"></script>
   </head>
 
   <body>
@@ -362,96 +355,95 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'js/retina-1.1.0.js' %}"></script>
-	<script src="{% static 'js/jquery.hoverdir.js' %}"></script>
-	<script src="{% static 'js/jquery.hoverex.min.js' %}"></script>
-	<script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
-  	<script src="{% static 'js/jquery.isotope.min.js' %}"></script>
-  	<script src="{% static 'js/custom.js' %}"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/vendor/retina.min.js' %}"></script>
+	<script src="{% static 'js/vendor/jquery_hoverdir.min.js' %}"></script>
+	<script src="{% static 'js/vendor/jquery_hoverex.min.js' %}"></script>
+	<script src="{% static 'js/vendor/jquery_pretty_photo.min.js' %}"></script>
+	<script src="{% static 'js/vendor/jquery_isotope.min.js' %}"></script>
+	<script src="{% static 'js/vendor/custom.min.js' %}"></script>
 
     <script>
-// Portfolio
-(function($) {
-	"use strict";
-	var $container = $('.portfolio'),
-		$items = $container.find('.portfolio-item'),
-		portfolioLayout = 'fitRows';
-		
-		if( $container.hasClass('portfolio-centered') ) {
-			portfolioLayout = 'masonry';
-		}
-				
-		$container.isotope({
-			filter: '*',
-			animationEngine: 'best-available',
-			layoutMode: portfolioLayout,
-			animationOptions: {
-			duration: 750,
-			easing: 'linear',
-			queue: false
-		},
-		masonry: {
-		}
-		}, refreshWaypoints());
-		
-		function refreshWaypoints() {
-			setTimeout(function() {
-			}, 1000);   
-		}
-				
-		$('nav.portfolio-filter ul a').on('click', function() {
-				var selector = $(this).attr('data-filter');
-				$container.isotope({ filter: selector }, refreshWaypoints());
-				$('nav.portfolio-filter ul a').removeClass('active');
-				$(this).addClass('active');
-				return false;
-		});
-		
-		function getColumnNumber() { 
-			var winWidth = $(window).width(), 
-			columnNumber = 1;
-		
-			if (winWidth > 1200) {
-				columnNumber = 5;
-			} else if (winWidth > 950) {
-				columnNumber = 4;
-			} else if (winWidth > 600) {
-				columnNumber = 3;
-			} else if (winWidth > 400) {
-				columnNumber = 2;
-			} else if (winWidth > 250) {
-				columnNumber = 1;
+	// Portfolio
+	(function($) {
+		"use strict";
+		var $container = $('.portfolio'),
+			$items = $container.find('.portfolio-item'),
+			portfolioLayout = 'fitRows';
+			
+			if( $container.hasClass('portfolio-centered') ) {
+				portfolioLayout = 'masonry';
 			}
-				return columnNumber;
-			}       
+					
+			$container.isotope({
+				filter: '*',
+				animationEngine: 'best-available',
+				layoutMode: portfolioLayout,
+				animationOptions: {
+				duration: 750,
+				easing: 'linear',
+				queue: false
+			},
+			masonry: {
+			}
+			}, refreshWaypoints());
 			
-			function setColumns() {
-				var winWidth = $(window).width(), 
-				columnNumber = getColumnNumber(), 
-				itemWidth = Math.floor(winWidth / columnNumber);
-				
-				$container.find('.portfolio-item').each(function() { 
-					$(this).css( { 
-					width : itemWidth + 'px' 
-				});
+			function refreshWaypoints() {
+				setTimeout(function() {
+				}, 1000);   
+			}
+					
+			$('nav.portfolio-filter ul a').on('click', function() {
+					var selector = $(this).attr('data-filter');
+					$container.isotope({ filter: selector }, refreshWaypoints());
+					$('nav.portfolio-filter ul a').removeClass('active');
+					$(this).addClass('active');
+					return false;
 			});
-		}
-		
-		function setPortfolio() { 
-			setColumns();
-			$container.isotope('reLayout');
-		}
 			
-		$container.imagesLoaded(function () { 
-			setPortfolio();
+			function getColumnNumber() { 
+				var winWidth = $(window).width(), 
+				columnNumber = 1;
+			
+				if (winWidth > 1200) {
+					columnNumber = 5;
+				} else if (winWidth > 950) {
+					columnNumber = 4;
+				} else if (winWidth > 600) {
+					columnNumber = 3;
+				} else if (winWidth > 400) {
+					columnNumber = 2;
+				} else if (winWidth > 250) {
+					columnNumber = 1;
+				}
+					return columnNumber;
+				}       
+				
+				function setColumns() {
+					var winWidth = $(window).width(), 
+					columnNumber = getColumnNumber(), 
+					itemWidth = Math.floor(winWidth / columnNumber);
+					
+					$container.find('.portfolio-item').each(function() { 
+						$(this).css( { 
+						width : itemWidth + 'px' 
+					});
+				});
+			}
+			
+			function setPortfolio() { 
+				setColumns();
+				$container.isotope('reLayout');
+			}
+				
+			$container.imagesLoaded(function () { 
+				setPortfolio();
+			});
+			
+			$(window).on('resize', function () { 
+			setPortfolio();          
 		});
-		
-		$(window).on('resize', function () { 
-		setPortfolio();          
-	});
-})(jQuery);
-</script>
+	})(jQuery);
+	</script>
   </body>
 </html>
