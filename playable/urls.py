@@ -11,6 +11,7 @@ admin.autodiscover()
 flatpages.register()
 
 urlpatterns = [
+    url(r'^$', 'playable.views.home', name='homepage_urls'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     url('^markdown/', include('django_markdown.urls')),
