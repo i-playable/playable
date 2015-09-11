@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.webdesign',
 
     'django_markdown',
+    'debug_toolbar',
 
     'playable',
     'product',

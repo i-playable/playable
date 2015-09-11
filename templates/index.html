@@ -1,34 +1,43 @@
 {% extends "base_generic.html" %}
-	{% block content %}
-	<div class="container">
-		<div class="row">
-			{% for uc in uc %}
-			<div class="col-md-4">
-				<a href="#" class="link-reset class-discovery-card-link"></a>
-					<div class="class-discovery-card-wrapper">
-						<a href="#" class="link-reset class-discovery-card-link">
-						<div class="class-discovery-card" style="background-image:url('https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/profilepic/cookly-default-profile.jpg');" sm-img-url="https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/profilepic/cookly-default-profile.jpg');">&nbsp;</div>
-						</a>
+    {% block jumbotron %}
+      <div class="jumbotron home-header">
+        <div class="container-fluid">
+          <h1>Playable</h1>
+          <p>{% lorem 1 p %}</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+        </div>
+      </div>
+      {% endblock %}
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            {% for uc in uc %}
+            <div class="col-md-4">
+                <a href="#" class="link-reset class-discovery-card-link"></a>
+                    <div class="class-discovery-card-wrapper">
+                        <a href="#" class="link-reset class-discovery-card-link">
+                        <div class="class-discovery-card" style="background-image:url('https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/profilepic/cookly-default-profile.jpg');" sm-img-url="https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/profilepic/cookly-default-profile.jpg');">&nbsp;</div>
+                        </a>
 
-						<div class="class-discovery-card-detail-warper">
-							<a href="#" class="link-reset class-discovery-card-link">
-							<div class="class-discovery-card-header">{{uc}}</div>
-							<img src="https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/logo/logo.thumbnail.png" class="class-discovery-card-logo">
-								<div class="row">
-									<div class="class-discovery-card-info">
-										<span class="card-price">{{uc.price}}</span>
-										<span class="cookly-icon chef-hat"></span>{{uc.category}}  
-				
-									</div>
-								</div>
-							</a>
+                        <div class="class-discovery-card-detail-warper">
+                            <a href="#" class="link-reset class-discovery-card-link">
+                            <div class="class-discovery-card-header">{{uc}}</div>
+                            <img src="https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/logo/logo.thumbnail.png" class="class-discovery-card-logo">
+                                <div class="row">
+                                    <div class="class-discovery-card-info">
+                                        <span class="card-price">{{uc.price}}</span>
+                                        <span class="cookly-icon chef-hat"></span>{{uc.category}}  
+                
+                                    </div>
+                                </div>
+                            </a>
 
-							<a href="" class="school-branch">{{uc.name}}</a>
-				
-						</div>
-					</div>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
-	{% endblock %}
+                            <a href="" class="school-branch">{{uc.name}}</a>
+                
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
