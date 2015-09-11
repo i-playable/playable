@@ -2,7 +2,7 @@
 @import url("hoverex-all.min.css") screen;
 @import 'variables';
 
-@import 'homepage'
+@import 'homepage';
 
 /*	################################################################
 	1. GENERAL STRUCTURES
@@ -66,8 +66,9 @@ a:focus {
 	text-align: center
 }
 
+
 /*	################################################################
-	BOOTSTRAP MODIFICATIONS & TWEAKS
+	2.BOOTSTRAP MODIFICATIONS & TWEAKS
 ################################################################# */
 .navbar {
 /*	min-height: 70px;*/
@@ -97,7 +98,7 @@ a:focus {
 }
 
 .navbar-default {
-	background-color: @playable-yellow;
+	background-color: white;
 	border-color: transparent;
 	.navbar-nav > li > a {
 		color: #F68D39;
@@ -157,7 +158,7 @@ a:focus {
 	margin-bottom: 25px;
 }
 /*	################################################################
-	SITE WRAPS
+	3.SITE WRAPS
 ################################################################# */
 #mainwarp{
 	overflow:auto;
@@ -168,10 +169,8 @@ footer {
 	padding: 50px 20px;
 	margin-top: 50px;
 	background-color: @playable-dark-grey;
-    position: fixed;
+    
     min-height: 200px;
-    bottom: 0;
-    width: 100%;
     p {
 		color: @playable-light-grey;
 		font-size: 0.8em;
@@ -194,4 +193,11 @@ footer {
 
 #flatpagewrap{
 	padding-top:80px;
+}
+
+/*	################################################################
+	4.SECTIONS
+################################################################# */
+.section{
+	min-height: 500px;
 }
