@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Kowit Charoenratchatabhan">
+    <meta name="author" content="Playable Co.,Ltd.">
     <link rel="shortcut icon" href="{% static "ico/favicon.ico" %}">
 
     <title>{% block title %}Playable{% endblock %}</title>
@@ -29,7 +29,7 @@
   </head>
 
   <body>
-	{% block navbar %}
+  {% block navbar %}
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -38,15 +38,15 @@
             <span class="sr-only">Toggle navigation</span>
             MENU
           </button>
-		<a class="navbar-brand" rel="home" href="/">
-			<img style="max-width:120px;" src="{% static "img/logo.png" %}">
-		</a>
-			
+    <a class="navbar-brand" rel="home" href="/">
+      <img style="max-width:120px;" src="{% static "img/logo.png" %}">
+    </a>
+      
         </div>
-		
+    
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">{% trans 'HOME' %}</a></li>
+            <li class="active"><a href="index.html">{% trans 'PRODUCTS' %}</a></li>
             <li><a href="about.html">{% trans 'ABOUT' %}</a></li>
             <li><a href="contact.html">{% trans 'CONTACT' %}</a></li>
           </ul>
@@ -54,55 +54,47 @@
 
       </div>
     </div>
-	{% endblock %}
-	<div id="mainwrap">
-  {% block jumbotron %}
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Playable</h1>
-      <p>{% lorem 1 p %}</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
-    </div>
-  </div>
   {% endblock %}
-	{% block content %}
-	{% endblock %}
-	</div>
-	<!-- *****************************************************************************************************************
-	 FOOTER
-	 ***************************************************************************************************************** -->
-	 <footer>
-	 	<div class="container">
-		 	<div class="row">
-		 		<div class="col-lg-8 sr-only">
-		 			<h4>{% trans 'About' %}</h4>
-		 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-		 		</div>
-		 		<div class="col-lg-4">
-		 			<h4>{% trans 'Contact Us' %}</h4>
-		 			<div class="hline-w"></div>
-		 			<p>
-		 				{% blocktrans %}
-		 				PlayAble Co., Ltd. 
-						142 Soi Praeng Sappasart, Tanao Road, San Chao Pho Suea, Phra Nakhon, Bangkok 10200<br/>
-						Tel. 02-622-2999 fax.02-622-3299<br/>
-						{% endblocktrans %}
-		 			</p>
-		 		</div>
-		 	</div><! --/row -->
-	 	</div><! --/container -->
-	 </footer>
-	 
+  <div id="mainwrap">
+  {% block jumbotron %}{% endblock %}
+  {% block content %}
+  {% endblock %}
+  </div>
+  <!-- *****************************************************************************************************************
+   FOOTER
+   ***************************************************************************************************************** -->
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 sr-only">
+          <h4>{% trans 'About' %}</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+        <div class="col-lg-4">
+          <h4>{% trans 'Contact Us' %}</h4>
+          <div class="hline-w"></div>
+          <p>
+            {% blocktrans %}
+            PlayAble Co., Ltd. 
+            142 Soi Praeng Sappasart, Tanao Road, San Chao Pho Suea, Phra Nakhon, Bangkok 10200<br/>
+            Tel. 02-622-2999 fax.02-622-3299<br/>
+            {% endblocktrans %}
+          </p>
+        </div>
+      </div><! --/row -->
+    </div><! --/container -->
+   </footer>
+   
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="{% static 'js/vendor/retina.min.js' %}"></script>
-	<script src="{% static 'js/vendor/jquery_hoverdir.min.js' %}"></script>
-	<script src="{% static 'js/vendor/jquery_hoverex.min.js' %}"></script>
-	<script src="{% static 'js/vendor/jquery_pretty_photo.min.js' %}"></script>
-	<script src="{% static 'js/vendor/jquery_isotope.min.js' %}"></script>
-	<script src="{% static 'js/vendor/custom.min.js' %}"></script>
+    <script src="{% static 'js/vendor/retina.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery_hoverdir.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery_hoverex.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery_pretty_photo.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery_isotope.min.js' %}"></script>
+    <script src="{% static 'js/vendor/custom.min.js' %}"></script>
   </body>
 </html>
