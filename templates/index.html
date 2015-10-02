@@ -2,44 +2,55 @@
 {% load i18n %}
     
     {% block content %}
-    <div class="jumbotron section home-header">
+    <div class="section home-header">
         <div class="container">
             <h1 class="text-center tagline">สื่อดิจิตอลนำการศึกษาไทย</h1>
-            <div class="home-box col-md-10 col-md-offset-1">
-                <p>{% lorem 1 p %}</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">{% trans "Read all »" %}</a></p>
+            <div class="home-box">
+                <h2 class="text-center">{% trans "New article" %}</h2>
+                <div class="row">
+                {% for article in articles %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="article-card-wrapper">
+                        <img src="assets/img/place_holder_01.jpg" class="img-responsive">
+                        <div class="article-card-detail">
+                        {% lorem 10 w %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+                <div><a class="btn btn-primary btn-block readmore" href="#" role="button">{% trans "Read all" %}</a></div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            {% for uc in uc %}
-            <div class="col-md-4">
-                <a href="#" class="link-reset class-discovery-card-link"></a>
-                    <div class="class-discovery-card-wrapper">
-                        <a href="#" class="link-reset class-discovery-card-link">
-                        <div class="class-discovery-card" style="background-image:url('https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/profilepic/cookly-default-profile.jpg');" sm-img-url="https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/profilepic/cookly-default-profile.jpg');">&nbsp;</div>
-                        </a>
 
-                        <div class="class-discovery-card-detail-warper">
-                            <a href="#" class="link-reset class-discovery-card-link">
-                            <div class="class-discovery-card-header">{{uc}}</div>
-                            <img src="https://dal05.objectstorage.softlayer.net/v1/AUTH_e09ec0c4-22cf-4bde-81c4-5736d2c1445f/cookly-media/images/logo/logo.thumbnail.png" class="class-discovery-card-logo">
-                                <div class="row">
-                                    <div class="class-discovery-card-info">
-                                        <span class="card-price">{{uc.price}}</span>
-                                        <span class="cookly-icon chef-hat"></span>{{uc.category}}  
-                
-                                    </div>
-                                </div>
-                            </a>
+    
+    
 
-                            <a href="" class="school-branch">{{uc.name}}</a>
-                
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2 class="text-center">{% trans "Free material, Free download." %}</h2>
+        </div>
+    </div>
+
+    <div class="section home-article">
+
+        <div class="container">
+            <div class="home-box">
+                <div class="row">
+                {% for article in articles %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="article-card-wrapper">
+                        <img src="assets/img/place_holder_01.jpg" class="img-responsive">
+                        <div class="article-card-detail">
+                        {% lorem 10 w %}
                         </div>
                     </div>
+                </div>
+                {% endfor %}
+                </div>
+                <div><a class="btn btn-primary btn-block readmore" href="#" role="button">{% trans "Read all" %}</a></div>
             </div>
-            {% endfor %}
         </div>
     </div>
     {% endblock %}

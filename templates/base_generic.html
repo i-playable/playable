@@ -30,30 +30,39 @@
 
   <body>
   {% block navbar %}
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            MENU
-          </button>
-    <a class="navbar-brand" rel="home" href="/">
-      <img style="max-width:120px;" src="{% static "img/logo.png" %}">
-    </a>
-      
-        </div>
-    
-        <div class="navbar-collapse collapse navbar-right">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">{% trans 'PRODUCTS' %}</a></li>
-            <li><a href="about.html">{% trans 'ABOUT' %}</a></li>
-            <li><a href="contact.html">{% trans 'CONTACT' %}</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-
+    <div class="container">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          MENU
+        </button>
+        <a class="navbar-brand" rel="home" href="/">
+          <img style="max-width:120px;" src="{% static "img/logo.png" %}">
+        </a>
       </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Product</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+          <div class="col-sm-6 col-md-6">
+            <form class="navbar-form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="q">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+            </form>
+          </div>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
     </div>
+
+
   {% endblock %}
   <div id="mainwrap">
   {% block jumbotron %}{% endblock %}

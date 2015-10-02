@@ -1,12 +1,44 @@
 @import 'playable/box';
+.section{
+	padding: 30px 0;
+}
+
+.section-header{
+	margin: 50px 0px;
+	color: #ccc;
+}
+.section-header.h2{
+	color: #333;
+}
 
 .home-header{
 	min-height: 650px;
 	background: url(../img/bg/bg01.jpg) no-repeat;
 	background-size: cover;
-	padding-top: 150px;
 	.home-box{
 		.rounded-corner();
 		background: white;
+		padding: 20px;
+		margin: 20px;
+	}
+
+}
+.home-article{
+	.home-header;
+	background:#eee;
+}
+
+.article-card-wrapper{
+	border: 1px #ccc solid;
+	border-top: none;
+	border-bottom:none;
+	margin: 0 0 15px;
+	.article-card-detail{
+		padding: 5px;
+		font-size: 0.8em;
+		font-weight: 100;
 	}
 }
+
+
+
