@@ -9,19 +9,26 @@
                 <h2 class="text-center">{% trans "Products" %}</h2>
                 <div class="row">
                 {% for product in products %}
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product-card-wrapper">
-                        <img src="assets/img/place_holder_01.jpg" class="img-responsive">
-                        <a href="{{product.get_absolut_url}}"><div class="product-card-caption">{{product.name}}</div></a>
-                        <div class="product-card-detail">
-                            <div>{% trans "Author" %} : {{product.author}}</div>
-                            <div>{% trans "Price" %} : {{product.price}}</div>
-                        </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                            <paper-card  image="assets/img/place_holder_01.jpg">
+                              <div class="card-content">
+                                <div>{{product.name}}</div>
+                                <div>{{product.author}}</div>
+                              </div>
+                              <div class="card-actions"> 
+                                <paper-button raised>{% trans "Learn more" %}</paper-button> 
+                              </div>
+                            </paper-card>
                     </div>
-                </div>
                 {% endfor %}
                 </div>
-                <div><a class="btn btn-primary btn-block readmore" href="#" role="button">{% trans "Read all" %}</a></div>
+                <hr>
+                <div class="row">
+                    <paper-button class="playable-secondary-color">
+                      <iron-icon icon="favorite"></iron-icon>
+                      {% trans "Read all" %}
+                    </paper-button>
+                </div>
             </div>
         </div>
     </div>
@@ -32,3 +39,14 @@
         </div>
     </div>
     {% endblock %}
+
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="product-card-wrapper">
+            <img src="assets/img/place_holder_01.jpg" class="img-responsive">
+            <a href="{{product.get_absolut_url}}"><div class="product-card-caption">{{product.name}}</div></a>
+            <div class="product-card-detail">
+                <div>{% trans "Author" %} : {{product.author}}</div>
+                <div>{% trans "Price" %} : {{product.price}}</div>
+            </div>
+        </div>
+    </div>

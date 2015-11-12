@@ -9,6 +9,6 @@ def home(request):
         'ar': Product.objects.filter(category__name='Active Reader'),
         'al': Product.objects.filter(category__name='Active Learnser'),
         'articles': range(3),
-        'products': Product.objects.filter()[:4],
+        'products': Product.objects.filter()[:3],
     }
     return render_to_response('index.html', response)
