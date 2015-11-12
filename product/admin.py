@@ -20,7 +20,7 @@ class GradeAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'name', 'category', 'grade', 'author', 'publisher', 'code', 'price', 'amout')
+        'name', 'slug', 'category', 'grade', 'author', 'publisher', 'code', 'price', 'amout')
 
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Author, AuthorAdmin)

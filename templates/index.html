@@ -16,7 +16,7 @@
                                 <div>{{product.author}}</div>
                               </div>
                               <div class="card-actions"> 
-                                <paper-button>{% trans "Learn more" %}</paper-button> 
+                                <a href="{{product.get_absolute_url}}"><paper-button>{% trans "Learn more" %}</paper-button></a>
                               </div>
                             </paper-card>
                     </div>
