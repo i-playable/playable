@@ -43,7 +43,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def get_absolute_url(self):
-        return reverse('product_url', args=[self.code])
+        return reverse('product_url', kwargs={'code': self.code})
 
     def __unicode__(self):
         return self.name
