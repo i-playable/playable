@@ -4,53 +4,44 @@
     {% block content %}
     <div class="section home-header">
         <div class="container">
-            <h1 class="text-center tagline">สื่อดิจิตอลนำการศึกษาไทย</h1>
+            <h1 class="text-center tagline">สื่อดิจิตอลนำพาการศึกษาไทย</h1>
             <div class="home-box">
-                <h2 class="text-center">{% trans "New article" %}</h2>
+                <h2 class="text-center section-header">{% trans "Products" %}</h2>
                 <div class="row">
-                {% for article in articles %}
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="article-card-wrapper">
-                        <img src="assets/img/place_holder_01.jpg" class="img-responsive">
-                        <div class="article-card-detail">
-                        {% lorem 10 w %}
-                        </div>
+                {% for product in products %}
+                    <div class="col-md-3 col-sm-6 col-xs-6 card">
+                        <a href="{{product.get_absolute_url}}">
+                        <paper-card  image="assets/img/place_holder_01.jpg">
+                          <div class="card-content">
+                            <div>{{product.name}}</div>
+                            <div>{{product.author}}</div>
+                          </div>
+                        </paper-card>
+                        </a>
                     </div>
-                </div>
                 {% endfor %}
                 </div>
-                <div><a class="btn btn-primary btn-block readmore" href="#" role="button">{% trans "Read all" %}</a></div>
+                <div class="row">
+                    <div class="col-md-12">
+                    <paper-button class="btn-block">
+                      <iron-icon icon="favorite"></iron-icon>
+                      {% trans "Read all" %}
+                    </paper-button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    
-    
-
-    <div class="container-fluid">
-        <div class="section-header">
-            <h2 class="text-center">{% trans "Free material, Free download." %}</h2>
-        </div>
-    </div>
-
-    <div class="section home-article">
-
-        <div class="container">
-            <div class="home-box">
-                <div class="row">
-                {% for article in articles %}
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="article-card-wrapper">
-                        <img src="assets/img/place_holder_01.jpg" class="img-responsive">
-                        <div class="article-card-detail">
-                        {% lorem 10 w %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                </div>
-                <div><a class="btn btn-primary btn-block readmore" href="#" role="button">{% trans "Read all" %}</a></div>
-            </div>
-        </div>
-    </div>
     {% endblock %}
+
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="product-card-wrapper">
+            <img src="assets/img/place_holder_01.jpg" class="img-responsive">
+            <a href="{{product.get_absolut_url}}"><div class="product-card-caption">{{product.name}}</div></a>
+            <div class="product-card-detail">
+                <div>{% trans "Author" %} : {{product.author}}</div>
+                <div>{% trans "Price" %} : {{product.price}}</div>
+            </div>
+        </div>
+    </div>

@@ -1,10 +1,10 @@
 
 @import url("prettyPhoto.min.css") screen;
 @import url("hoverex-all.min.css") screen;
+@import 'playable-font';
 @import 'variables';
-
 @import 'homepage';
-
+@import 'polymer';
 /*	################################################################
 	1. GENERAL STRUCTURES
 ################################################################# */
@@ -68,7 +68,7 @@ a:focus {
 }
  
 h1.tagline{
-	color: #aa;
+	color: #fff;
 }
 
 /*	################################################################
@@ -105,9 +105,10 @@ h1.tagline{
 	background-color: white;
 	border-color: transparent;
 	.navbar-nav > li > a {
-		color: #F68D39;
+		color: @playable-primary-color;
 		font-weight: 100;
 		font-size: .7em;
+		padding-top: 19px;
 	}
 	.navbar-toggle {
 		border-color: @playable-light-grey;

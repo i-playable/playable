@@ -8,6 +8,7 @@ def home(request):
         'uc': Product.objects.filter(category__name='Universal Curriculum'),
         'ar': Product.objects.filter(category__name='Active Reader'),
         'al': Product.objects.filter(category__name='Active Learnser'),
-        'articles':range(3)
+        'articles': range(3),
+        'products': Product.objects.filter()[:4],
     }
     return render_to_response('index.html', response)
